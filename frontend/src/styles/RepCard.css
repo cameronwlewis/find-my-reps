@@ -1,0 +1,13 @@
+.cardWrapper {
+  padding: 20px;
+  border: 1px solid lightgray;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardFooter {
+  text-align: left;
+}

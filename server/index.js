@@ -17,11 +17,13 @@ app.get('/senators/:state',
 
 async function findRepresentativesByState(req, res, next) {
   const url = `http://whoismyrepresentative.com/getall_reps_bystate.php?state=${req.params.state}&output=json`;
+  console.log('hit find rep: ', url)
   axios.get(url).then(handleApiResponse(res, next));
 }
 
 function findSenatorsByState(req, res, next) {
   const url = `http://whoismyrepresentative.com/getall_sens_bystate.php?state=${req.params.state}&output=json`;
+  console.log('hit find senator: ', url)
   axios.get(url).then(handleApiResponse(res, next)).catch(handleApiError(res, next));
 }
 
@@ -49,7 +51,7 @@ function handleApiError(res, next) {
   };
 }
 
-const port = process.env.PORT ?? 3000;
+const port = process.env.PORT ?? 4000;
 
 app.listen(port, () => {
   console.log('API listening at http://localhost:%s', port);
