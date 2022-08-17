@@ -19,10 +19,10 @@
 }
 
 .submitButton {
-  background-color: #282c34;
+  background-color: #d1d5db;
   border: 1px solid white;
-  color: white;
-  padding: 15px 15px;
+  color: black;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -35,7 +35,6 @@
 
 .submitButton:hover {
   background-color: white;
-  color: #282c34;
 }
 
 select {
