@@ -1,7 +1,6 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /*column-gap: 80px;*/
 }
 
 .repCards {
@@ -12,4 +11,36 @@
 .senatorCards {
   display: flex;
   padding: 25px;
+}
+
+.columnHeading {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.submitButton {
+  background-color: #282c34;
+  border: 1px solid white;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.submitButton:hover {
+  background-color: white;
+  color: #282c34;
+}
+
+select {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 2px;
+  margin: 15px;
 }

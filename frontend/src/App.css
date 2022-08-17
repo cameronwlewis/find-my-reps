@@ -1,12 +1,10 @@
-@import url('http://fonts.cdnfonts.com/css/open-sans');
-
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  font-family: "Open Sans", sans-serif;
+  background-color: #282c34;
+  color: white;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,27 +13,20 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.appHeader {
+  font-size: 7vw;
+  font-weight: 800;
+  padding: 50px;
+}
+
+.appBody {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  margin: 10px;
+  transition: 01s;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-

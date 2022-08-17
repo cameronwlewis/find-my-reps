@@ -1,6 +1,6 @@
 import "../styles/CongressmanCard.css";
 
-export const CongressmanCard = ({ congressman }) => {
+export const CongressmanCard = ({ congressman, isRep }) => {
   const addressLine1 = congressman["office"].match(/.+?(?=Washington)/);
   const addressLine2 = congressman["office"].match(/Washington.*/);
   return (
@@ -12,7 +12,7 @@ export const CongressmanCard = ({ congressman }) => {
         </div>
         <div className={"cardHeader"}>
           <span>{congressman["state"]}</span>
-          <span>District {congressman["district"]}</span>
+          {isRep && <span>District {congressman["district"]}</span>}
         </div>
       </div>
       <br />
