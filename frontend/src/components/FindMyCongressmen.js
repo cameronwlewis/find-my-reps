@@ -1,21 +1,18 @@
 import { useState } from "react";
-import RepCard from "./RepCard";
+import CongressmanCard from "./CongressmanCard";
+import "../styles/FindMyCongressmen.css";
 
-export const FindMyReps = () => {
+export const FindMyCongressmen = () => {
   const [state, setState] = useState("");
-  const [senators, setSenators] = useState({});
+  const [senators, setSenators] = useState([]);
   const [reps, setReps] = useState([]);
 
   const getReps = () => {
     return fetch(`/representatives/${state}`)
       .then((response) => response.json())
       .then((json) => {
-        // console.log(json);
-
-        console.log(JSON.stringify(json));
-        // console.log("what is json results: ", json.results);
+        console.log(json);
         setReps(json.results);
-        console.log("REPS: ", reps);
       });
   };
 
@@ -24,7 +21,7 @@ export const FindMyReps = () => {
       .then((response) => response.json())
       .then((json) => {
         console.log(json);
-        setSenators(json);
+        setSenators(json.results);
       });
   };
 
@@ -32,6 +29,7 @@ export const FindMyReps = () => {
     // TODO: validation of state initials
     event.preventDefault();
     getReps();
+    getSenators();
   };
 
   return (
@@ -47,26 +45,26 @@ export const FindMyReps = () => {
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <div className={"results"}>
-        <div>
-          <p>Reps</p>
+      <div className={"cards"}>
+        <div className={"repCards"}>
           <div>
+            <p>Representatives</p>
             {reps.map((rep, index) => (
-              <RepCard rep={rep} key={index} />
+              <CongressmanCard congressman={rep} key={index} />
             ))}
           </div>
         </div>
-        <div>
-          <p>Senators</p>
-          {senators.success === true && (
-            <div>
-              <p>{senators}</p>
-            </div>
-          )}
+        <div className={"senatorCards"}>
+          <div>
+            <p>Senators</p>
+            {senators.map((senator, index) => (
+              <CongressmanCard congressman={senator} key={index} />
+            ))}
+          </div>
         </div>
       </div>
     </>
   );
 };
 
-export default FindMyReps;
+export default FindMyCongressmen;

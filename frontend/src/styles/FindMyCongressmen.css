@@ -1,0 +1,15 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /*column-gap: 80px;*/
+}
+
+.repCards {
+  display: flex;
+  padding: 25px;
+}
+
+.senatorCards {
+  display: flex;
+  padding: 25px;
+}
